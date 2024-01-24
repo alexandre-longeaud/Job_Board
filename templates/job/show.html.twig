@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JobController!{% endblock %}
+
+{% block body %}
+
+<div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">
+<h1 class="text-4xl text-center">{{ offre.nom }}</h1>
+</div>
+
+<div class="container mx-auto px-4">
+
+    {% for message in app.flashes('sucess') %}
+
+            <div class="flash-notice bg-green-500 text-white px-4 py-2 rounded-md">
+                {{ message }}
+            </div>
+
+    {% endfor %}
+
+    {% include "job/_offre.html.twig" %}
+
+    <div class="ml-3 mt-5">
+
+    <a href="{{ path('app_job')}}" class="border-solid border-2 border-indigo-600 rounded-md  p-2 ml-2 font-bold " >Retour</a>
+    <a href="{{ path('app_job_edit',{'id': offre.id})}}" class="border-solid border-2 border-indigo-600 rounded-md  p-2 ml-2 font-bold " >Modifier</a>
+    <a href="{{ path('app_job_delete',{'id': offre.id})}}" class="border-solid border-2 border-indigo-600 rounded-md  p-2 ml-2 font-bold " >Supprimer</a>
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

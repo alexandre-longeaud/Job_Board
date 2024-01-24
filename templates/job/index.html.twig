@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JobController!{% endblock %}
+
+{% block body %}
+
+    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">
+        <h1 class="text-4xl text-center">Job Board</h1>
+    </div>
+
+     {% for message in app.flashes('success') %}
+
+            <div class="flash-notice bg-green-500 text-white px-4 py-2 rounded-md">
+                {{ message }}
+            </div>
+
+    {% endfor %}
+
+    <div class="container mx-auto px-4">
+
+        {% include "job/_boutton.html.twig" %}
+
+        {% for offre  in offres.data %}
+
+        {% include "job/_offre.html.twig" %}
+
+        {% endfor %}
+
+        {% set path = 'app_job' %}
+        {% set pages = offres.pages %}
+        {% set currentPage = offres.page %}
+        {% include "job/_pagination.html.twig" %}
+
+        
+    </div>
+ 
+{% endblock %}
