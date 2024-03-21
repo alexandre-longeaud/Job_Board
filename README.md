@@ -1,5 +1,8 @@
 # Présentation du projet
 Site ou l'on trouve des annonces d'offre d'emploi.
+![alt text](image.png)
+Un crud complet sur l'entité offre (lire,ajouter,modifier,supprimer)
+![alt text](image-1.png)
 
 # Fonctionnalités 
 
@@ -26,3 +29,4 @@ Egalement un sytème de pagination (sans bundle), mis en plage pour consulter l'
 -  CRUD sur l'entité Offre `Create`, `Read`, `Update`, `Delete`
 - Mise en place des fixtures avec l'utilisation de `Faker` pour générer des données cohérente.
 - Gestion de la vue avec `Twig`
+- Mise en place de la pagination sans bundle

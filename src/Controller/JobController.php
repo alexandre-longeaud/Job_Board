@@ -60,6 +60,13 @@ class JobController extends AbstractController
             $em->persist($offre);
             $em->flush();
 
+        // Ajout d'une petit message avec la méthode addFlash de l'abstractController.
+        // On lui passe en argument la clé et le message que l'on souhaite affiché
+        $this->addFlash(
+            'sucess',
+            'Offre ajoutée avec succès'
+        );
+
         // Suite à la création depuis le formulaire, on effectue une redirection vers la route précédent pour afficher une seul offre.
         // On envoie également l'id de la nouvelle offre car la route précédent demande en argument un id
         // Route de redirection : "#[Route('/{id}', name: 'app_job_show',requirements: ['id' => '\d+'])]"
@@ -92,7 +99,7 @@ class JobController extends AbstractController
         // On lui passe en argument la clé et le message que l'on souhaite affiché
         $this->addFlash(
             'sucess',
-            'Vous avez modifier le job'
+            'Offre modifier avec succès'
         );
         // Redirection après sauvegarde des modifications
         return $this->redirectToRoute('app_job_show', [

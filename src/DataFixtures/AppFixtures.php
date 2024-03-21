@@ -125,17 +125,17 @@ class AppFixtures extends Fixture
         }
 
         private function randomService(ObjectManager $manager): Service
- {
- return $manager->getRepository(Service::class)->findByNom(self::SERVICES[array_rand(self::SERVICES)])[0];
- }
+    {
+    return $manager->getRepository(Service::class)->findByNom(self::SERVICES[array_rand(self::SERVICES)])[0];
+    }
 
- private function randomTags(ObjectManager $manager): array
- {
- $tags = [];
- for ($j = 0; $j < 3; $j++) {
- $tags[] = $manager->getRepository(Tag::class)->findByNom(self::TAGS[array_rand(self::TAGS)])[0];
- }
- return $tags;
- }
+    private function randomTags(ObjectManager $manager): array
+    {
+        $tags = [];
+        for ($j = 0; $j < 3; $j++) {
+        $tags[] = $manager->getRepository(Tag::class)->findByNom(self::TAGS[array_rand(self::TAGS)])[0];
+        }
+        return $tags;
+    }
 
 }
